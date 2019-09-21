@@ -20,6 +20,7 @@ pub struct Text {
     text: String,
 }
 
+#[allow(dead_code)]
 pub fn element(
     name: impl Into<String>,
     attributes: HashMap<String, String>,
@@ -32,6 +33,7 @@ pub fn element(
     })
 }
 
+#[allow(dead_code)]
 pub fn text(string: impl Into<String>) -> Node {
     Node::Text(Text {
         text: string.into(),

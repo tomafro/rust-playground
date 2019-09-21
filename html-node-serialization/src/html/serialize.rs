@@ -3,7 +3,7 @@ use serde::{Serialize, Serializer};
 
 use super::*;
 
-impl serde::Serialize for Node {
+impl Serialize for Node {
     fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
     where
         S: Serializer,
@@ -20,7 +20,7 @@ struct AttributesAndChildren<'a> {
     children: &'a Vec<Node>,
 }
 
-impl<'a> serde::Serialize for AttributesAndChildren<'a> {
+impl<'a> Serialize for AttributesAndChildren<'a> {
     fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
     where
         S: Serializer,
@@ -39,7 +39,7 @@ impl<'a> serde::Serialize for AttributesAndChildren<'a> {
     }
 }
 
-impl serde::Serialize for Element {
+impl Serialize for Element {
     fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
     where
         S: Serializer,
@@ -54,7 +54,7 @@ impl serde::Serialize for Element {
     }
 }
 
-impl serde::Serialize for Text {
+impl Serialize for Text {
     fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
     where
         S: Serializer,
